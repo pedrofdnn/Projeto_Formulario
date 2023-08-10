@@ -285,10 +285,20 @@
                     </div>
                 </div>
 
+                <!-- container de input dados produto -->
+                <h3 class="title-container-input">Informe o Valor do Imóvel</h3>
+                <div class="container-input">
+                    <div class="label-float">
+                        <input type="text" id="valorInput" placeholder="" title="Digite o valor do Imóvel"
+                            onkeypress="$(this).mask('R$ 999.990.000,00')" required>
+                        <label>Valor: </label>
+                    </div>
+                </div>
+
                 <!-- caixa de texto -->
                 <div class="box-coments">
                     <div class="title-coments">
-                        <label for="comment">Escreva abaixo mais detalhes do Veiculo:</label>
+                        <label for="comment">Escreva abaixo mais detalhes do Imóvel:</label>
                     </div>
                     <div class="box-coments">
                         <textarea name="comment"></textarea>
@@ -335,7 +345,7 @@
                 <div class="container-radio">
                     <div class="radio">
                         <input class="customize" type="radio" name="optionals[]" value="big_tires">
-                        <label for="big_tires">A Vista</label>
+                        <label for="big_tires">À Vista</label>
                     </div>
                     <div class="radio">
                         <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
@@ -467,6 +477,20 @@
                             <option value="value2">Correios</option>
                             <option value="value3">Comprador</option>
                         </select>
+                    </div>
+                </div>
+
+                <!-- container de input dados produto -->
+                <h3 class="title-container-input">Fabricante e Valor do Produto</h3>
+                <div class="container-input">
+                    <div class="label-float">
+                        <input type=" text" placeholder="" title="Digite a Marca do Produto" required>
+                        <label>Marca: </label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" id="valorInput" placeholder="" title="Digite o valor do Produto"
+                            onkeypress="$(this).mask('R$ 999.990.000,00')" required>
+                        <label>Valor: </label>
                     </div>
                 </div>
 

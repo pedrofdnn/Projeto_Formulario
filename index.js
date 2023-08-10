@@ -284,7 +284,6 @@ function setupFileUpload2() {
         });
     }
 
-
     // função de botão de enviar e checar os inputs
     sendButton.addEventListener("click", function () {
         const requiredInputs = form.querySelectorAll("[required]");

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favi.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Anuncia Aí</title>
+
+    <script src="./index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script>
+        // função de manipulação de arquivos enviados e limpeza da pagina.
+        document.addEventListener("DOMContentLoaded", function () {
+            setupFileUpload1();
+            setupFileUpload2();
+            setupFileUpload3();
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- titulo do site -->
+    <div class="title-anuncio">
+        <svg>
+            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                Anuncia Aí
+            </text>
+        </svg>
+    </div>
+
+    <!-- Seletor de formulários para preencher -->
+    <div class="title-box-form">
+        <h1 class="title-box1">Cadastro de Produto</h1>
+        <h5 class="title-box2">selecione o tipo de produto e preencha o formulário do anuncio.</h5>
+    </div>
+
+    <!-- container dos botões -->
+    <div class="container-button">
+        <button class="form-button-car" id="form1">Carros</button>
+        <button class="form-button-imo" id="form2">Imóveis</button>
+        <button class="form-button-out" id="form3">Outros</button>
+        <button class="form-button-back" id="back-button">Voltar</button>
+    </div>
+
+    <div class="container-all-forms">
+        <div class="form-container form1">
+
+            <!-- Formulário 1 -->
+
+            <form id="upload-form1">
+                <h2 class="title-page">Formulário de Carros</h2>
+                <div class="title-anuncio">
+                    <div class="label-float">
+                        <input type="text" placeholder="" required title="Digite o titulo do anúncio">
+                        <label for="">Titulo do Anúncio: </label>
+                    </div>
+                </div>
+
+                <!-- container de input dados produto -->
+                <h3 class="title-container-input">Informações do Carro</h3>
+                <div class="container-input">
+                    <div class="label-float">
+                        <input type=" text" placeholder="" title="Digite a Marca do Veiculo" required>
+                        <label>Marca: </label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" placeholder="" title="Digite o modelo do Veiculo" required>
+                        <label>Modelo: </label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" placeholder="" min="1900" max="2099" maxlength="4"
+                            title="Digite um ano válido com 4 dígitos numéricos (YYYY)" required>
+                        <label>Ano: </label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" placeholder="" title="Digite a Cor do Veiculo">
+                        <label>Cor: </label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" id="valorInput" placeholder="" title="Digite o valor do Carro"
+                            onkeypress="$(this).mask('R$ 999.990.000,00')" required>
+                        <label>Valor: </label>
+                    </div>
+                </div>
+
+                <!-- container de seletores -->
+                <h3 class="title-container-">Acessórios que vem no Veiculo</h3>
+                <div class="container-radio">
+                    <div class="radio">
+                        <input class="customize" type="checkbox" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Pneus Grandes</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="checkbox" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Rádio</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="checkbox" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Ar Condicionado</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="checkbox" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Vidro Elétrico</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="checkbox" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Estepe Novo</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="checkbox" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Banco de Couro</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="checkbox" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Regulador de Altura</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="checkbox" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Direção Hidráulica</label>
+                    </div>
+                </div>
+
+
+                <!-- Container envio de arquivos -->
+                <div class="container-send-file">
+                    <label class="button-send" for="arquivo">
+                        <div class="img-upload">
+                            <img src="./img/upload.png" alt="">
+                        </div>
+                        <div class="title-img">
+                            <strong>Enviar Fotos</strong>
+                        </div>
+                        <input class="button-send" type="file" name="arquivo" id="arquivo2" style="display: none;">
+                    </label>
+                    <div class="file-info" id="file-info"></div>
+                </div>
+
+                <!-- caixa de texto -->
+                <div class="box-coments">
+                    <div class="title-coments">
+                        <label for="comment">Escreva abaixo mais detalhes do Veiculo:</label>
+                    </div>
+                    <div class="box-coments">
+                        <textarea name="comment"></textarea>
+                    </div>
+                </div>
+
+                <!-- dados de contato -->
+                <h3 class="title-container-input">Dados de contato</h3>
+                <div class="container-input">
+                    <div class="label-float">
+                        <input type="text" placeholder="" required>
+                        <label for="name">Nome:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" maxlength="11" placeholder="" title="Digite o Seu Telefone com DDD "
+                            onkeypress="$(this).mask('(00) 9 0000-0000')" required>
+                        <label for="name">Telefone:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="email" placeholder="" title="Digite o seu email Ex: usuario@dominio.com">
+                        <label for="name">Email:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" placeholder="" title="Digite o endereço Ex: Av, Rua, Alameda..." required>
+                        <label for="name">Endereço de Venda:</label>
+                    </div>
+                </div>
+
+                <!-- botões do formulário -->
+                <div class="container-button">
+                    <div>
+                        <button class="form-button reset" id="file-info" type="reset">Limpar</button>
+                    </div>
+                    <div>
+                        <button class="form-button" id="send-button" type="submit">Enviar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="form-container form2">
+
+            <!-- Formulário 2 -->
+
+            <form id="upload-form2">
+
+                <h2 class="title-page">Formulário de Imóveis</h2>
+                <div class="title-anuncio">
+                    <div class="label-float">
+                        <input type="text" placeholder="" required title="Digite o titulo do anúncio">
+                        <label for="">Titulo do Anúncio: </label>
+                    </div>
+                </div>
+
+                <!-- container de seletores -->
+                <h3 class="title-container-">Tipo de Imóvel</h3>
+                <div class="container-radio">
+                    <div class="radio">
+                        <input class="customize" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Casa</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Comercial</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Apartamento</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">sobrado</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Terreno</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Galpão</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Rural</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Outros</label>
+                    </div>
+                </div>
+
+                <!-- container de opções -->
+                <div class="container-option">
+                    <h3 class="title-options">Informações Adicionais.</h3>
+                    <div class="container-option1">
+                        <span>Quantidade de Quartos</span>
+                        <select name="container-option1" id="">
+                            <option value="none" selected></option>
+                            <option value="value1">01</option>
+                            <option value="value2">02</option>
+                            <option value="value3">03</option>
+                            <option value="value4">04</option>
+                            <option value="value5">05</option>
+                            <option value="value6">06</option>
+                        </select>
+                    </div>
+                    <div class="container-option2">
+                        <span>Quantidade de Banheiros</span>
+                        <select name="Quantidade de Banheiros" id="">
+                            <option value="none" selected></option>
+                            <option value="value1">01</option>
+                            <option value="value2">02</option>
+                            <option value="value3">03</option>
+                            <option value="value4">04</option>
+                        </select>
+                    </div>
+                    <div class="container-option3">
+                        <span>Vagas de Estacionamento</Area></span>
+                        <select name="Vagas" id="">
+                            <option value="none" selected></option>
+                            <option value="value1">01</option>
+                            <option value="value2">02</option>
+                            <option value="value3">03</option>
+                            <option value="value4">04</option>
+                        </select>
+                    </div>
+                    <div class="container-option4">
+                        <span>Área de Lazer</Area></span>
+                        <select name="Lazer" id="">
+                            <option value="none" selected></option>
+                            <option value="true">Sim</option>
+                            <option value="false">Não</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- caixa de texto -->
+                <div class="box-coments">
+                    <div class="title-coments">
+                        <label for="comment">Escreva abaixo mais detalhes do Veiculo:</label>
+                    </div>
+                    <div class="box-coments">
+                        <textarea name="comment"></textarea>
+                    </div>
+                </div>
+
+                <!-- container de informações adicionais -->
+                <h3 class="title-container-input">Medidas do Imóvel</h3>
+                <div class="container-input">
+                    <div class="label-float">
+                        <input type=" text" placeholder="" onkeypress="$(this).mask(`#0m‎²`)">
+                        <label>Area Útil: </label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" placeholder="" onkeypress="$(this).mask(`#00m‎²`)">
+                        <label>Área total: </label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" placeholder="" onkeypress="$(this).mask(`#0m‎²`)">
+                        <label>Frente: </label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" placeholder="" onkeypress="$(this).mask(`#0m‎²`)">
+                        <label>Fundos: </label>
+                    </div>
+                </div>
+
+                <!-- Container envio de arquivos -->
+                <div class="container-send-file">
+                    <label class="button-send" for="arquivo">
+                        <div class="img-upload">
+                            <img src="./img/upload.png" alt="">
+                        </div>
+                        <div class="title-img">
+                            <strong>Enviar Fotos</strong>
+                        </div>
+                        <input class="button-send" type="file" name="arquivo2" id="arquivo" style="display: none;">
+                    </label>
+                    <div class="file-info2" id="file-info2"></div>
+                </div>
+
+                <!-- container de seletores -->
+                <h3 class="title-container-">Condições de pagamento Imóvel</h3>
+                <div class="container-radio">
+                    <div class="radio">
+                        <input class="customize" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">A Vista</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Aceita Automóvel</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Aceita outro imóvel</label>
+                    </div>
+                </div>
+
+                <!-- dados de contato -->
+                <h3 class="title-container-input">Dados de contato</h3>
+                <div class="container-input">
+                    <div class="label-float">
+                        <input type="text" placeholder="" required>
+                        <label for="name">Nome:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" maxlength="11" placeholder="" title="Digite o Seu Telefone com DDD "
+                            onkeypress="$(this).mask('(00) 9 0000-0000')" required>
+                        <label for="name">Telefone:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="email" placeholder="" title="Digite o seu email Ex: usuario@dominio.com">
+                        <label for="name">Email:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" placeholder="" title="Digite o endereço Ex: Av, Rua, Alameda..." required>
+                        <label for="name">Endereço de Venda:</label>
+                    </div>
+                </div>
+
+                <!-- botões do formulário -->
+                <div class="container-button">
+                    <div>
+                        <button class="form-button reset" id="reset-button2" type="reset">Limpar</button>
+                    </div>
+                    <div>
+                        <button class="form-button" id="send-button2" type="submit">Enviar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="form-container form3">
+            <form id="upload-form3">
+
+                <!-- Formulário 3 -->
+
+                <h2 class="title-page">Formulário de Produtos Diversos</h2>
+                <div class="title-anuncio">
+                    <div class="label-float">
+                        <input type="text" placeholder="" required title="Digite o titulo do anúncio">
+                        <label for="">Titulo do Anúncio: </label>
+                    </div>
+                </div>
+
+                <!-- container de seletores -->
+                <h3 class="title-container-">Tipo de Produto</h3>
+                <div class="container-radio">
+                    <div class="radio">
+                        <input class="customize" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Eletrônicos</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Brinquedos</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Celulares</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Computadores</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Utensílios Domésticos</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Utensílios de Cozinha</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Acessórios Femininos</label>
+                    </div>
+                    <div class="radio">
+                        <input class="customize blue" type="radio" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Acessórios em Geral</label>
+                    </div>
+                </div>
+
+                <!-- container de opções -->
+                <div class="container-option">
+                    <h3 class="title-options">Condições do Produto e Entrega:</h3>
+                    <div class="container-option5">
+                        <span>Produto Usado:</span>
+                        <select name="Produto Usado" id="">
+                            <option value="none" selected></option>
+                            <option value="value1">Sim</option>
+                            <option value="value2">Não</option>
+                        </select>
+                    </div>
+                    <div class="container-option6">
+                        <span>Produto importado:</span>
+                        <select name="Quantidade de Banheiros" id="">
+                            <option value="none" selected></option>
+                            <option value="value1">Sim</option>
+                            <option value="value2">Não</option>
+                        </select>
+                    </div>
+                    <div class="container-option7">
+                        <span>Garantia do Produto:</Area></span>
+                        <select name="Vagas" id="">
+                            <option value="none" selected></option>
+                            <option value="value1">Vendedor</option>
+                            <option value="value2">Fabricante</option>
+                        </select>
+                    </div>
+                    <div class="container-option8">
+                        <span>Disponibilidade de Entrega:</Area></span>
+                        <select name="Lazer" id="">
+                            <option value="none" selected></option>
+                            <option value="value1">Vendedor</option>
+                            <option value="value2">Correios</option>
+                            <option value="value3">Comprador</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- caixa de texto -->
+                <div class="box-coments">
+                    <div class="title-coments">
+                        <label for="comment">Escreva abaixo mais detalhes do Produto:</label>
+                    </div>
+                    <div class="box-coments">
+                        <textarea name="comment"></textarea>
+                    </div>
+                </div>
+
+                <!-- Container envio de arquivos -->
+                <div class="container-send-file">
+                    <label class="button-send" for="arquivo">
+                        <div class="img-upload">
+                            <img src="./img/upload.png" alt="">
+                        </div>
+                        <div class="title-img">
+                            <strong>Enviar Fotos</strong>
+                        </div>
+                        <input class="button-send" type="file" name="arquivo2" id="arquivo" style="display: none;">
+                    </label>
+                    <div class="file-info3" id="file-info3"></div>
+                </div>
+
+                <!-- dados de contato -->
+                <h3 class="title-container-input">Dados de contato</h3>
+                <div class="container-input">
+                    <div class="label-float">
+                        <input type="text" placeholder="" required>
+                        <label for="name">Nome:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" maxlength="11" placeholder="" title="Digite o Seu Telefone com DDD "
+                            onkeypress="$(this).mask('(00) 9 0000-0000')" required>
+                        <label for="name">Telefone:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" maxlength="8" placeholder="" title="Digite o Seu Cep "
+                            onkeypress="$(this).mask('00000-000')" required>
+                        <label for="name">Cep:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="email" placeholder="" title="Digite o seu email Ex: usuario@dominio.com" required>
+                        <label for="name">Email:</label>
+                    </div>
+                    <div class="label-float">
+                        <input type="text" placeholder="" title="Digite o endereço Ex: Av, Rua, Alameda..." required>
+                        <label for="name">Endereço de Venda:</label>
+                    </div>
+                </div>
+
+                <!-- botões do formulário -->
+                <div class="container-button">
+                    <div>
+                        <button class="form-button reset" id="reset-button3" type="reset">Limpar</button>
+                    </div>
+                    <div>
+                        <button class="form-button" id="send-button3" type="submit">Enviar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,430 @@
+body {
+  background-color: rgb(238, 232, 232);
+  font-family: "Roboto", sans-serif;
+}
+
+/* estilo dos botões dos forms. */
+.container-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+  align-content: stretch;
+}
+.form-button-car,
+.form-button-imo,
+.form-button-out,
+.form-button-back,
+.form-button {
+  box-shadow: 3px 4px 10px 0px #899599;
+  background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+  background-color: #ededed;
+  border-radius: 15px;
+  border: 1px solid #d6bcd6;
+  cursor: pointer;
+  color: #3a8a9e;
+  font-family: "Righteous", sans-serif;
+  font-size: 17px;
+  padding: 9px 35px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #e1e2ed;
+  margin: 15px;
+}
+.form-button-car:hover,
+.form-button-imo:hover,
+.form-button-out:hover,
+.form-button-back:hover,
+.form-button:hover {
+  background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+  background-color: #bab1ba;
+}
+.form-button-car:active,
+.form-button-imo:active,
+.form-button-out:active,
+.form-button-back:active,
+.form-button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* titulo do site */
+svg {
+  font-family: "Righteous", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+svg text {
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #516d7d;
+  font-size: 100px;
+}
+@keyframes stroke {
+  0% {
+    fill: rgba(42, 114, 142, 0);
+    stroke: rgba(81, 109, 125, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: rgba(42, 114, 142, 0);
+    stroke: rgba(81, 109, 125, 1);
+  }
+  80% {
+    fill: rgba(42, 114, 142, 0);
+    stroke: rgba(81, 109, 125, 1);
+    stroke-width: 3;
+  }
+  100% {
+    fill: rgba(42, 114, 142, 1);
+    stroke: rgba(81, 109, 125, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+.wrapper {
+  background-color: #ffffff;
+}
+
+/* Seletor de formulários para preencher */
+.title-box-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+.title-box1 {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  margin-bottom: auto;
+  text-align: center;
+}
+.title-box2 {
+  display: block;
+  margin: 5px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  text-align: center;
+}
+
+/* efeito input geral */
+input {
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+.label-float {
+  position: relative;
+  padding-top: 25px;
+}
+
+.label-float input {
+  border: 0;
+  border-bottom: 2px solid lightgrey;
+  outline: none;
+  min-width: 300px;
+  font-size: 16px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  border-radius: 3px;
+}
+
+.label-float input:focus {
+  border-bottom: 2px solid #3951b2;
+}
+
+.label-float input::placeholder {
+  color: transparent;
+}
+
+.label-float label {
+  pointer-events: none;
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  margin: 25px 0 0 0;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+}
+
+.label-float input:required:invalid + label {
+  color: red;
+}
+.label-float input:focus:required:invalid {
+  border-bottom: 2px solid red;
+}
+.label-float input:required:invalid + label:before {
+  content: "*";
+}
+
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label {
+  font-size: 13px;
+  margin-top: 0;
+  color: #3951b2;
+}
+
+/* titulo do anuncio */
+.title-page {
+  display: flex;
+  text-align: center;
+  background-color: rgba(81, 109, 125, 1);
+  padding: 20px 198px;
+  margin: 0px 0 10px 0;
+  border-radius: 9px 9px 0 0px;
+  text-transform: uppercase;
+  font-family: "Righteous", sans-serif;
+}
+
+.title-anuncio {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: normal;
+}
+
+/* container geral do formulário*/
+.container-all-forms {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 700px;
+  border-radius: 9px;
+  text-align: center;
+  background-color: rgba(160, 160, 160, 0.274);
+}
+
+/* container de input dados produto */
+.title-container-input {
+  margin: 15px 5px 5px 5px;
+}
+
+.container-input {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: -5px 19px 19px;
+}
+
+/* container de inputs de seleção */
+.container-radio {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 15px 15px;
+}
+
+/* Container envio de arquivos e estilo do seletor */
+.container-send-file {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 0 15px 0;
+}
+
+.title-img {
+  display: flex;
+  margin: 16px 0 0 5px;
+}
+
+.button-send {
+  display: flex;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  position: relative;
+  border-radius: 9px;
+  filter: alpha(opacity=0);
+}
+
+.button-send::before {
+  font-weight: 900;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.button-send:hover {
+  background-color: #e0e0e0;
+}
+
+.file-info {
+  margin: 15px;
+}
+
+/* container caixa de comentários */
+.box-coments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-coments {
+  display: block;
+  margin: 10px;
+}
+
+.box-coments {
+  display: block;
+}
+
+textarea {
+  width: 310px;
+  height: 99px;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: justify;
+  margin: 0 0 15px;
+}
+
+/* container de opções  */
+.container-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.container-option1 {
+  margin-left: 15px;
+}
+.container-option3 {
+  margin-right: 6px;
+}
+.container-option4 {
+  margin-left: 73px;
+}
+.container-option5 {
+  margin-left: 15px;
+}
+.container-option6 {
+  margin-left: -13px;
+}
+.container-option7 {
+  margin-left: -10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  svg text {
+    font-size: 70px;
+    padding: 10px 0;
+  }
+
+  .container-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .title-page {
+    display: flex;
+    text-align: center;
+    background-color: rgba(81, 109, 125, 1);
+    padding: 20px 198px;
+    margin: 0px 0 10px 0;
+    border-radius: 9px 9px 0 0px;
+    text-transform: uppercase;
+    font-family: "Righteous", sans-serif;
+  }
+}
+
+@media (max-width: 565px), (max-width: 669px) {
+  svg text {
+    font-size: 70px;
+    padding: 10px 0;
+  }
+
+  .container-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .title-page {
+    display: flex;
+    text-align: center;
+    background-color: rgba(81, 109, 125, 1);
+    padding: 20px 129px;
+    margin: 0px 0 10px 0;
+    border-radius: 9px 9px 0 0px;
+    text-transform: uppercase;
+    font-family: "Righteous", sans-serif;
+  }
+}
+
+@media (max-width: 433px), (max-width: 335px) {
+  svg text {
+    font-size: 70px;
+    padding: 10px 0;
+  }
+
+  .container-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .title-page {
+    display: flex;
+    text-align: center;
+    background-color: rgba(81, 109, 125, 1);
+    padding: 20px 95px;
+    margin: 0px 0 10px 0;
+    border-radius: 9px 9px 0 0px;
+    text-transform: uppercase;
+    font-family: "Righteous", sans-serif;
+    
+  }
+}
+
+@media (max-width: 366px) {
+  svg text {
+    font-size: 70px;
+    padding: 10px 0;
+  }
+
+  .container-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .title-page {
+    display: flex;
+    text-align: center;
+    background-color: rgba(81, 109, 125, 1);
+    margin: 0px 0 10px 0;
+    border-radius: 9px 9px 0 0px;
+    text-transform: uppercase;
+    font-family: "Righteous", sans-serif;
+  }
+}
